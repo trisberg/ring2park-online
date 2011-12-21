@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -24,6 +25,7 @@ import org.hibernate.validator.constraints.Email;
  * @author Kevin A. Lee
  */
 @Entity
+@Table(name="USERS")
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

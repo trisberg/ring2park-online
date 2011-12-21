@@ -46,7 +46,7 @@
 	</security:authentication-manager>
 
 	<security:jdbc-user-service id="jdbcUserService" data-source-ref="testDataSource"
-		users-by-username-query="select username, password, enabled from user where username = ?"
+		users-by-username-query="select username, password, enabled from users where username = ?"
 		authorities-by-username-query="select user_username, roles_authority from user_role where user_username = ?" />
 		
 	<!-- Creates an in-memory HSQLDB Database -->

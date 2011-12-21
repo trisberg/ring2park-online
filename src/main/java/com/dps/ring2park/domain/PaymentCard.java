@@ -8,7 +8,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Transient;
 
 /**
@@ -40,10 +42,12 @@ public class PaymentCard implements Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "payment_card_seq")
+    @SequenceGenerator(name = "payment_card_seq", sequenceName = "payment_card_seq")
 	private Long id;
 
 	@ManyToOne
+	@JoinColumn(name = "user_username")
 	private User user;
 
 	@Enumerated(EnumType.STRING)

@@ -183,7 +183,7 @@ public class UserServiceImpl implements UserService {
 			Authentication auth = authenticationManager.authenticate(token);
 			SecurityContextHolder.getContext().setAuthentication(auth);
 		} catch (BadCredentialsException e) {
-			// log the message and go on…
+			// log the message and go on
 			System.err.println(e.getMessage());
 		}
 	}
